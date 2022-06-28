@@ -21,6 +21,7 @@ setup-kafka-ecosystem:
 setup-connectors:
 	@sleep 15
 	./scripts/connectors/debezium.sh
+	./scripts/connectors/sink.sh
 .PHONY: setup-connectors
 
 setup-all: setup-db setup-kafka-ecosystem setup-connectors setup-app setup-controlcenter

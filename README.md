@@ -1,5 +1,8 @@
 # cdc-poc
-CDC with Kafka, KSQL, akhq dashboard, schema registry, Debezium and Postgres
+
+CDC with Kafka, KSQL, akhq dashboard, schema registry, Debezium and Postgres.
+
+It uses [custom fork of Kafka Connect JDBC](https://github.com/dalthon/kafka-connect-jdbc) that ignores table structure
 
 ### How to run
 ```
@@ -26,7 +29,7 @@ make ksql
 make psql
 ```
 
-### Configure Debezium
+### Configure Debezium & Sink Connectors
 ```
 make setup-connectors
 ```
