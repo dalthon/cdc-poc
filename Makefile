@@ -64,3 +64,11 @@ purge-all:
 logs:
 	@docker-compose logs -f cdc-poc
 .PHONY: logs
+
+wipe:
+	docker compose down -v --rmi local --remove-orphans
+.PHONY: wipe
+
+logs:
+	docker compose logs -f
+.PHONY: logs
