@@ -21,6 +21,7 @@ setup-kafka-ecosystem:
 setup-connectors:
 	@sleep 15
 	./scripts/connectors/debezium.sh
+	./scripts/connectors/sink.sh
 .PHONY: setup-connectors
 
 setup-all: setup-db setup-kafka-ecosystem setup-connectors setup-app setup-controlcenter
@@ -62,5 +63,9 @@ purge-all:
 .PHONY: purge-all
 
 logs:
-	@docker-compose logs -f cdc-poc
+	@docker-compose logs -f
 .PHONY: logs
+
+wipe:
+	docker compose down -v --rmi local --remove-orphans
+.PHONY: wipe
