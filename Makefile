@@ -62,10 +62,6 @@ purge-all:
 	@docker images -q | xargs docker rmi
 .PHONY: purge-all
 
-logs:
-	@docker-compose logs -f cdc-poc
-.PHONY: logs
-
 wipe:
 	docker compose down -v --rmi local --remove-orphans
 .PHONY: wipe

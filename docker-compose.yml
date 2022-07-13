@@ -2,6 +2,7 @@ version: '2.2'
 
 services:
   cdc-poc:
+    image: cdc-poc
     container_name: cdc-poc
     environment:
       - NODE_ENV=development
@@ -17,6 +18,7 @@ services:
       - cdc
 
   postgres:
+    image: local-postgres
     hostname: postgres
     container_name: postgres
     build:
